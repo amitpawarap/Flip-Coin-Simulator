@@ -12,7 +12,7 @@ fi
 #loop For Simulator
 hwin=0
 twin=0
-for((i=0;i<10;i++))
+while [ $hwin -lt 21 ] && [ $twin -lt 21 ]
 do
 	toss=$((RANDOM%2))
 	if [ $toss -eq 1 ]
@@ -27,4 +27,10 @@ done
 echo "NO OF TIME HEAD WIN"$hwin
 echo "NO OF TIME TAIL WIN"$twin
 
+if [ $hwin -gt $twin ]
+then
+echo "HEAD WIN BY"$((hwin-twin))
+else
+echo "TAILS WIN BY"$((hwin-twin))
+fi
 #.......................................................................................................
